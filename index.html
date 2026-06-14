@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👑 The Trade Room 👑</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#030712;
+    --bg2:#071827;
+    --cyan:#00eaff;
+    --green:#00ff99;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top,#0b2340 0%,#030712 55%,#000000 100%);
+    position:relative;
+}
+
+/* ===========================
+   FLOATING PARTICLES
+=========================== */
+
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.particle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(0,234,255,0.8);
+    box-shadow:0 0 15px rgba(0,234,255,0.8);
+    animation:float linear infinite;
+}
+
+.particle:nth-child(1){
+    width:5px;height:5px;
+    left:10%;animation-duration:12s;
+}
+.particle:nth-child(2){
+    width:8px;height:8px;
+    left:25%;animation-duration:18s;
+}
+.particle:nth-child(3){
+    width:4px;height:4px;
+    left:40%;animation-duration:10s;
+}
+.particle:nth-child(4){
+    width:7px;height:7px;
+    left:60%;animation-duration:16s;
+}
+.particle:nth-child(5){
+    width:5px;height:5px;
+    left:75%;animation-duration:14s;
+}
+.particle:nth-child(6){
+    width:9px;height:9px;
+    left:90%;animation-duration:20s;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+/* ===========================
+   MAIN CARD
+=========================== */
+
+.card{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:420px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(0,234,255,0.25);
+
+    border-radius:30px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 20px rgba(0,234,255,0.12),
+    0 0 40px rgba(0,234,255,0.08),
+    inset 0 0 20px rgba(255,255,255,0.03);
+
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===========================
+   PROFILE
+=========================== */
+
+.profile-wrap{
+    display:flex;
+    justify-content:center;
+}
+
+/* =================================== */
+/* CHANGE PROFILE IMAGE HERE 🔥 */
+/* =================================== */
+
+.profile{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:4px solid var(--cyan);
+
+    box-shadow:
+    0 0 20px var(--cyan),
+    0 0 50px rgba(0,234,255,0.6);
+
+    animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow:
+        0 0 15px var(--cyan),
+        0 0 35px rgba(0,234,255,0.4);
+    }
+
+    50%{
+        box-shadow:
+        0 0 30px var(--cyan),
+        0 0 65px rgba(0,234,255,0.9);
+    }
+
+    100%{
+        box-shadow:
+        0 0 15px var(--cyan),
+        0 0 35px rgba(0,234,255,0.4);
+    }
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+h1{
+    margin-top:22px;
+    color:white;
+    font-size:30px;
+    font-weight:800;
+
+    text-shadow:
+    0 0 12px rgba(0,234,255,0.4);
+}
+
+.sub{
+    margin-top:16px;
+    color:#d8e5f0;
+    line-height:1.9;
+    font-size:15px;
+}
+
+/* ===========================
+   CTA BUTTON
+=========================== */
+
+.btn-wrap{
+    margin-top:28px;
+}
+
+/* =================================== */
+/* CHANGE TELEGRAM LINK HERE 🔥 */
+/* =================================== */
+
+.telegram-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:999px;
+
+    font-weight:700;
+    font-size:17px;
+
+    color:black;
+
+    background:
+    linear-gradient(135deg,var(--cyan),var(--green));
+
+    box-shadow:
+    0 0 20px rgba(0,234,255,0.4),
+    0 0 40px rgba(0,255,153,0.25);
+
+    transition:.35s ease;
+}
+
+.telegram-btn:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 30px rgba(0,234,255,0.9),
+    0 0 60px rgba(0,255,153,0.45);
+}
+
+/* ===========================
+   TIMER
+=========================== */
+
+.timer{
+    margin-top:25px;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+}
+
+.count{
+    color:var(--cyan);
+
+    font-size:28px;
+    font-weight:800;
+
+    text-shadow:
+    0 0 15px var(--cyan);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+    margin-top:30px;
+}
+
+.disclaimer{
+    color:rgba(255,255,255,.65);
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* =================================== */
+/* CHANGE SNOW AGENCY LINK HERE 🔥 */
+/* =================================== */
+
+.agency{
+    margin-top:15px;
+}
+
+.agency a{
+    color:var(--cyan);
+    text-decoration:none;
+    font-weight:600;
+
+    text-shadow:
+    0 0 10px rgba(0,234,255,0.7);
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    h1{
+        font-size:26px;
+    }
+
+    .telegram-btn{
+        font-size:16px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div class="particles">
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+</div>
+
+<!-- CARD -->
+<div class="card">
+
+    <div class="profile-wrap">
+
+        <!-- CHANGE PROFILE IMAGE HERE -->
+        <img
+        src="https://i.imgur.com/8Km9tLL.png"
+        alt="Profile"
+        class="profile">
+
+    </div>
+
+    <h1>👑 The Trade Room 👑</h1>
+
+    <div class="sub">
+        Start Earning with Expert Calls🔥<br>
+        Trusted by 12,000+ Traders🌍<br>
+        Join our Channel for daily updates✅
+    </div>
+
+    <div class="btn-wrap">
+
+        <!-- CHANGE TELEGRAM LINK HERE -->
+        <a href="#" class="telegram-btn">
+            ✈️ Join Now Free ✈️
+        </a>
+
+    </div>
+
+    <div class="timer">
+        Redirecting in
+        <span class="count" id="countdown">20</span>
+        seconds...
+    </div>
+
+    <div class="footer">
+
+        <div class="disclaimer">
+            This channel is for educational and informational purposes only.
+        </div>
+
+        <div class="agency">
+
+            <!-- CHANGE SNOW AGENCY LINK HERE -->
+            <a href="#">
+                Ads Managed by Snow Agency
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* =================================== */
+/* CHANGE REDIRECT URL HERE 🔥 */
+/* =================================== */
+
+const redirectURL = "#";
+
+let seconds = 20;
+
+const countdown = document.getElementById("countdown");
+
+const timer = setInterval(() => {
+
+    seconds--;
+
+    countdown.textContent = seconds;
+
+    if(seconds <= 0){
+
+        clearInterval(timer);
+
+        window.location.href = redirectURL;
+
+    }
+
+},1000);
+
+</script>
+
+</body>
+</html>
